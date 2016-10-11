@@ -5,17 +5,17 @@ var _emitter = new EventEmitter();
 var _loader = null;
 
 var init = function( createPoemGraph, manifests ) {
-		
+		console.log(manifests)
 	_loader = createManifestLoader( manifests, {
 		emitter : _emitter,
 		getGraph : function( manifest, slug ) {	return createPoemGraph( manifest, _emitter ); },
 		globalManifest : {}
 	});
-	
+
 	_emitter.on('load', function( e ) {
 		window.poem = e.graph;
 	});
-	
+
 };
 
 var load = function( slug ) {

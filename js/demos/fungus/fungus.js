@@ -3,6 +3,7 @@ var Ease = require('eases/elastic-out')
 var Lerp = require('lerp')
 
 function _createBones ( mesh, config ) {
+	console.log('aye');
 
 	var bones = []
 	var bonesA = []
